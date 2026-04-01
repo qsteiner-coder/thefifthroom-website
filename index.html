@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Fifth Room — Premium Garage Buildouts | Northern Utah</title>
+  <meta name="description" content="The Fifth Room transforms garages into the most valuable space in your home. Premium custom garage buildouts, flooring, storage, and gym conversions in Northern Utah." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --gold-dim: rgba(201, 168, 76, 0.15);
+      --gold-border: rgba(201, 168, 76, 0.25);
+      --black: #0A0A0A;
+      --black-2: #111111;
+      --black-3: #181818;
+      --offwhite: #F5F0E8;
+      --gray: #8A8A8A;
+      --gray-light: #C0BAB0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--offwhite);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+    .display { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0) 100%);
+      backdrop-filter: blur(2px);
+      transition: background 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .nav-logo svg { width: 38px; height: auto; }
+    .nav-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      color: var(--offwhite);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.55rem 1.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .nav-toggle span { width: 24px; height: 1.5px; background: var(--offwhite); display: block; transition: 0.3s; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 8vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+        linear-gradient(160deg, #0f0f0f 0%, #0A0A0A 100%);
+    }
+
+    .hero-line {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--gold-border) 30%, var(--gold-border) 70%, transparent);
+      right: 8vw;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 780px; }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 1.0;
+      color: var(--offwhite);
+      margin-bottom: 2rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--gray-light);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      padding: 1rem 2.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-ghost {
+      color: var(--offwhite);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.2s;
+    }
+    .btn-ghost::after { content: '→'; }
+    .btn-ghost:hover { color: var(--gold); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 8vw;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      animation: fadeIn 1s 1.2s both;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 7rem 8vw; }
+
+    .only-garages-bar {
+      background: var(--gold-dim);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 0.9rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .only-garages-bar span { color: var(--gray); letter-spacing: 0.1em; }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--offwhite);
+      margin-bottom: 1.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .section-body {
+      font-size: 1rem;
+      color: var(--gray-light);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    .gold-rule {
+      width: 60px; height: 1px;
+      background: var(--gold);
+      margin: 2rem 0;
+    }
+
+    /* ─── ABOUT / STORY ─── */
+    #about {
+      background: var(--black-2);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-house {
+      width: 100%;
+      max-width: 380px;
+      margin: auto;
+      display: block;
+    }
+    .about-stat-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .about-stat {
+      border: 1px solid var(--gold-border);
+      padding: 1.5rem;
+      background: var(--gold-dim);
+    }
+    .about-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .about-stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--black); }
+    .services-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+      align-items: end;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--gold-border);
+      border: 1px solid var(--gold-border);
+    }
+    .service-card {
+      background: var(--black);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .service-card:hover { background: var(--black-3); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gold-border);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-num { color: rgba(201,168,76,0.5); }
+
+    .service-icon {
+      width: 36px; height: 36px;
+      margin-bottom: 1.25rem;
+      color: var(--gold);
+    }
+
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--offwhite);
+      margin-bottom: 0.75rem;
+    }
+    .service-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 1.5rem;
+      filter: brightness(0.85) saturate(0.9);
+      transition: filter 0.4s;
+    }
+    .service-card:hover .service-img { filter: brightness(1) saturate(1.05); }
+
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── PROCESS ─── */
+    #process {
+      background: var(--black-2);
+      border-top: 1px solid var(--gold-border);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+      position: relative;
+    }
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 2.5rem; left: 12.5%; right: 12.5%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-border), var(--gold-border), transparent);
+    }
+    .process-step {
+      padding: 0 2rem 0 0;
+      position: relative;
+    }
+    .process-num {
+      width: 48px; height: 48px;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      background: var(--black-2);
+      position: relative;
+      z-index: 1;
+    }
+    .process-step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--offwhite);
+      margin-bottom: 0.75rem;
+    }
+    .process-step-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── PROMISE / DIFFERENCE ─── */
+    #difference {
+      background: var(--black);
+      border-top: 1px solid var(--gold-border);
+    }
+    .difference-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .difference-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .diff-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .diff-item:last-child { border-bottom: none; }
+    .diff-icon {
+      width: 42px; height: 42px;
+      border: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .diff-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--offwhite);
+      margin-bottom: 0.4rem;
+    }
+    .diff-desc {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .promise-box {
+      border: 1px solid var(--gold-border);
+      padding: 3rem;
+      background: var(--gold-dim);
+      position: relative;
+      overflow: hidden;
+    }
+    .promise-box::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 12rem;
+      color: var(--gold);
+      opacity: 0.06;
+      position: absolute;
+      top: -2rem;
+      left: 1rem;
+      line-height: 1;
+    }
+    .promise-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--offwhite);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .promise-attr {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── CTA BAND ─── */
+    #cta {
+      background: var(--gold);
+      padding: 6rem 8vw;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230A0A0A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .cta-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+    .cta-text p {
+      font-size: 1rem;
+      color: rgba(10,10,10,0.65);
+    }
+    .btn-dark {
+      background: var(--black);
+      color: var(--gold);
+      padding: 1.1rem 2.8rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+      transition: transform 0.2s;
+    }
+    .btn-dark:hover { transform: translateY(-2px); }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--black-2);
+      border-top: 1px solid var(--gold-border);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-info { margin-top: 3rem; }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-item-icon {
+      width: 40px; height: 40px;
+      border: 1px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 0.25rem;
+    }
+    .contact-value {
+      font-size: 1rem;
+      color: var(--offwhite);
+    }
+    .contact-value a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-value a:hover { color: var(--gold); }
+
+    /* Form */
+    .contact-form { margin-top: 1rem; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .form-field label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: var(--black);
+      border: 1px solid var(--gold-border);
+      color: var(--offwhite);
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-field select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      cursor: pointer;
+    }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--gray); }
+
+    .form-submit {
+      background: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 1rem 2.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .service-checks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--gold-border);
+      background: var(--black);
+      transition: border-color 0.2s, background 0.2s;
+      font-size: 0.83rem;
+      color: var(--gray-light);
+      user-select: none;
+    }
+    .check-item:hover { border-color: var(--gold); color: var(--offwhite); }
+    .check-item input[type="checkbox"] { display: none; }
+    .check-item span::before {
+      content: '';
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 1px solid var(--gold-border);
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      transition: background 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+    }
+    .check-item input:checked ~ span { color: var(--offwhite); }
+    .check-item input:checked ~ span::before {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .check-item:has(input:checked) {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+    @media (max-width: 600px) {
+      .service-checks { grid-template-columns: 1fr; }
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--gold-border);
+      padding: 3rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--offwhite);
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+    .footer-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fadeIn 0.8s ease both; }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
+
+    [data-reveal] {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-reveal].will-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+
+      section { padding: 5rem 6vw; }
+      #hero { padding: 0 6vw; }
+
+      .about-grid,
+      .services-intro,
+      .difference-layout,
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .pain-grid { grid-template-columns: 1fr !important; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .process-grid::before { display: none; }
+      .process-step { padding: 0; }
+
+      .cta-inner { flex-direction: column; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .process-grid { grid-template-columns: 1fr; }
+      .about-stat-block { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="#hero" class="nav-logo">
+      <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="54" y1="100" x2="54" y2="50" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="square"/>
+        <line x1="146" y1="100" x2="146" y2="50" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="square"/>
+        <line x1="38" y1="100" x2="162" y2="100" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="square"/>
+        <polyline points="46,50 100,18 154,50" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+        <line x1="66" y1="100" x2="66" y2="55" stroke="#C9A84C" stroke-width="1" opacity="0.45"/>
+        <line x1="134" y1="100" x2="134" y2="55" stroke="#C9A84C" stroke-width="1" opacity="0.45"/>
+        <polyline points="58,55 100,26 142,55" stroke="#C9A84C" stroke-width="1" opacity="0.45" fill="none"/>
+        <polygon points="66,100 66,55 100,26 134,55 134,100" fill="#C9A84C" fill-opacity="0.07"/>
+        <rect x="74" y="72" width="52" height="28" stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.75"/>
+        <line x1="74" y1="81" x2="126" y2="81" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+        <line x1="74" y1="90" x2="126" y2="90" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+        <line x1="100" y1="72" x2="100" y2="100" stroke="#C9A84C" stroke-width="0.7" opacity="0.3"/>
+        <rect x="118" y="22" width="8" height="18" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.35"/>
+        <circle cx="100" cy="18" r="2.5" fill="#C9A84C" opacity="0.7"/>
+      </svg>
+      <span class="nav-wordmark">The Fifth Room</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#difference">Why Us</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <div class="nav-toggle" id="navToggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- GARAGES ONLY BAR -->
+  <div class="only-garages-bar" style="margin-top:64px;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    We exclusively build garage spaces &mdash; nothing else.
+    <span>&nbsp;|&nbsp;</span>
+    <span>100% focused on making your garage the best room in your home</span>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-line"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow fade-in">Northern Utah's Premier Garage Buildout Company</div>
+      <h1 class="hero-title fade-in delay-1">
+        The Room<br><em>Your Home</em><br>Was Missing.
+      </h1>
+      <p class="hero-sub fade-in delay-2">
+        We turn garages into the most functional space in your home — flooring, storage, organization, gym buildouts, and more. One company, one call, done on your schedule.
+      </p>
+      <div class="hero-actions fade-in delay-3">
+        <a href="#contact" class="btn-primary">Start Your Project</a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-text" data-reveal>
+        <div class="section-eyebrow">Our Story</div>
+        <h2 class="section-title">Built by craftsmen,<br><em>not a franchise.</em></h2>
+        <div class="gold-rule"></div>
+        <p class="section-body">
+          The Fifth Room is a Northern Utah garage transformation company built on one principle: your garage deserves the same attention as every other room in your home. We are owner-operated — meaning Quincy is on every project, overseeing the work and accountable to you from first call to final walk-through.
+        </p>
+        <p class="section-body" style="margin-top: 1.25rem;">
+          Based in Kaysville and serving the entire Wasatch Front — Davis, Weber, Salt Lake, and Utah counties — we do one thing and one thing only: garages. No kitchens, no bathrooms, no additions. Just garage spaces, done with the kind of focus and expertise that comes from doing the same thing every single day.
+        </p>
+        <div class="about-stat-block" style="margin-top: 2.5rem;">
+          <div class="about-stat" data-reveal>
+            <div class="about-stat-num">1</div>
+            <div class="about-stat-label">Owner On Every Job</div>
+          </div>
+          <div class="about-stat" data-reveal>
+            <div class="about-stat-num">3</div>
+            <div class="about-stat-label">Counties Served</div>
+          </div>
+          <div class="about-stat" data-reveal>
+            <div class="about-stat-num">1</div>
+            <div class="about-stat-label">Standard: Premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual" data-reveal>
+        <!-- Large logo mark centered as visual element -->
+        <svg class="about-house" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="54" y1="100" x2="54" y2="50" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="146" y1="100" x2="146" y2="50" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="square"/>
+          <line x1="38" y1="100" x2="162" y2="100" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="square"/>
+          <polyline points="46,50 100,18 154,50" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="square" stroke-linejoin="miter" fill="none"/>
+          <line x1="66" y1="100" x2="66" y2="55" stroke="#C9A84C" stroke-width="1" opacity="0.45"/>
+          <line x1="134" y1="100" x2="134" y2="55" stroke="#C9A84C" stroke-width="1" opacity="0.45"/>
+          <polyline points="58,55 100,26 142,55" stroke="#C9A84C" stroke-width="1" opacity="0.45" fill="none"/>
+          <polygon points="66,100 66,55 100,26 134,55 134,100" fill="#C9A84C" fill-opacity="0.07"/>
+          <rect x="74" y="72" width="52" height="28" stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.75"/>
+          <line x1="74" y1="81" x2="126" y2="81" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+          <line x1="74" y1="90" x2="126" y2="90" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+          <line x1="100" y1="72" x2="100" y2="100" stroke="#C9A84C" stroke-width="0.7" opacity="0.3"/>
+          <rect x="118" y="22" width="8" height="18" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.35"/>
+          <circle cx="100" cy="18" r="2.5" fill="#C9A84C" opacity="0.7"/>
+          <!-- Name lockup -->
+          <line x1="30" y1="112" x2="170" y2="112" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <text x="100" y="124" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="900" font-size="11" fill="#F5F0E8" letter-spacing="5">THE FIFTH ROOM</text>
+          <line x1="30" y1="129" x2="170" y2="129" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <text x="100" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="5.5" fill="#C9A84C" letter-spacing="3" opacity="0.8">THE ROOM YOUR HOME WAS MISSING.</text>
+        </svg>
+
+        <!-- Decorative border treatment -->
+        <div style="position:absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-top: 1px solid var(--gold-border); border-right: 1px solid var(--gold-border);"></div>
+        <div style="position:absolute; bottom: -20px; left: -20px; width: 60px; height: 60px; border-bottom: 1px solid var(--gold-border); border-left: 1px solid var(--gold-border);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-intro">
+      <div data-reveal>
+        <div class="section-eyebrow">What We Build</div>
+        <h2 class="section-title">Every project.<br><em>One standard.</em></h2>
+      </div>
+      <div data-reveal>
+        <p class="section-body">
+          From a single-coat floor to a full garage-to-gym transformation, we bring the same level of precision and care to every job. No shortcuts. No cheap materials. Just work you'll be proud to show off.
+        </p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=85&fit=crop&auto=format" alt="Polyaspartic garage floor coating" loading="lazy" />
+        <div class="service-num">01</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="14" width="20" height="6" rx="0"/>
+          <path d="M4 14V8l8-5 8 5v6"/>
+          <line x1="9" y1="14" x2="9" y2="20"/>
+          <line x1="15" y1="14" x2="15" y2="20"/>
+        </svg>
+        <div class="service-name">Polyaspartic &amp; Epoxy Flooring</div>
+        <p class="service-desc">Premium polyaspartic coatings built for Utah's freeze-thaw cycles. Fast cure times, hot-tire resistant, and UV stable — no yellowing, no peeling, no compromise.</p>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=85&fit=crop&auto=format" alt="Custom garage storage systems" loading="lazy" />
+        <div class="service-num">02</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="3" y1="15" x2="21" y2="15"/>
+          <line x1="9" y1="9" x2="9" y2="21"/>
+        </svg>
+        <div class="service-name">Custom Storage Systems</div>
+        <p class="service-desc">Wall shelving, overhead racks, slatwall panels, custom cabinetry, and workbenches — designed as a complete system for how you actually use your space.</p>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=85&fit=crop&auto=format" alt="Garage insulation and drywall" loading="lazy" />
+        <div class="service-num">03</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+          <rect x="2" y="3" width="4" height="18"/>
+        </svg>
+        <div class="service-name">Insulation &amp; Drywall</div>
+        <p class="service-desc">Properly insulated garages are livable year-round in Utah. We handle batt, blown-in, and spray foam — finished with professional-grade drywall and paint.</p>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=85&fit=crop&auto=format" alt="Home gym conversion" loading="lazy" />
+        <div class="service-num">04</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          <line x1="12" y1="12" x2="12" y2="16"/>
+        </svg>
+        <div class="service-name">Gym &amp; Fitness Conversions</div>
+        <p class="service-desc">Commercial rubber flooring, mirror walls, proper ventilation, dedicated circuits — everything you need for a world-class home gym without leaving your property.</p>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=700&q=85&fit=crop&auto=format" alt="Custom sauna buildout" loading="lazy" />
+        <div class="service-num">05</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 3h14v18H5z"/>
+          <path d="M9 3v18M15 3v18"/>
+          <path d="M5 8h14M5 16h14"/>
+        </svg>
+        <div class="service-name">Sauna Buildouts</div>
+        <p class="service-desc">Custom cedar sauna rooms built inside your garage — from framing and vapor barrier to benches, heaters, and tempered glass doors. Kit installs and full custom builds.</p>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=700&q=85&fit=crop&auto=format" alt="Garage organization" loading="lazy" />
+        <div class="service-num">06</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>
+        <div class="service-name">Garage Organization</div>
+        <p class="service-desc">A beautiful garage is only as good as how it functions day-to-day. We assess how you actually use your space and build an organization system around your life — tools, sports gear, seasonal storage, and everything in between.</p>
+      </div>
+
+      <!-- Service 7 -->
+      <div class="service-card" data-reveal>
+        <img class="service-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=700&q=85&fit=crop&auto=format" alt="Garage electrical and lighting" loading="lazy" />
+        <div class="service-num">07</div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="1"/>
+          <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+        </svg>
+        <div class="service-name">Electrical &amp; Lighting</div>
+        <p class="service-desc">LED shop lighting upgrades, dedicated circuits, EV charger rough-in, sub-panel installs — coordinated with licensed Utah electricians and pulled into your final project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div style="max-width: 600px;" data-reveal>
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">Simple. <em>Transparent.</em> Done right.</h2>
+      <p class="section-body" style="margin-top: 1rem;">
+        No pushy sales tactics, no vague estimates. Here is exactly what to expect from first call to finished floor.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step" data-reveal>
+        <div class="process-num">I</div>
+        <div class="process-step-title">Free Consultation</div>
+        <p class="process-step-desc">We come to you — measure the space, listen to how you use it, and understand your goals. No pressure, no commitment.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">II</div>
+        <div class="process-step-title">Clear Proposal</div>
+        <p class="process-step-desc">You receive a clear, detailed written proposal scoped to exactly what you want. We bring the best options to the table — if you want to adjust anything, that's never a problem.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">III</div>
+        <div class="process-step-title">Professional Build</div>
+        <p class="process-step-desc">Quincy oversees every project personally — coordinating all work, keeping you informed, and holding every trade to our standard.</p>
+      </div>
+      <div class="process-step" data-reveal>
+        <div class="process-num">IV</div>
+        <div class="process-step-title">Walk-Through &amp; Warranty</div>
+        <p class="process-step-desc">We walk the completed project with you, answer every question, and back our work in writing. Your garage, your way — guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="difference">
+    <div style="text-align:center; max-width:680px; margin: 0 auto 5rem;" data-reveal>
+      <div class="section-eyebrow" style="justify-content:center;">The Difference</div>
+      <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Three reasons people call us<br>instead of figuring it out <em>alone.</em></h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-bottom: 5rem;" class="pain-grid">
+
+      <div style="border:1px solid var(--gold-border); padding:2.5rem; background:var(--black-2); position:relative; overflow:hidden;" data-reveal>
+        <div style="font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:var(--gold); opacity:0.07; position:absolute; top:-1rem; left:1rem; line-height:1;">01</div>
+        <div style="width:52px;height:52px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.75rem;color:var(--gold);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--offwhite);margin-bottom:1rem;line-height:1.3;">You work directly with an owner. Every single time.</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.8;">When you call, you get Quincy — not a call center, not a project manager you've never met. He listens to exactly what you want, shows up to every job personally, and makes sure the finished product matches what you talked about. No surprises. No handoffs.</p>
+      </div>
+
+      <div style="border:1px solid var(--gold-border); padding:2.5rem; background:var(--black-2); position:relative; overflow:hidden;" data-reveal>
+        <div style="font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:var(--gold); opacity:0.07; position:absolute; top:-1rem; left:1rem; line-height:1;">02</div>
+        <div style="width:52px;height:52px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.75rem;color:var(--gold);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--offwhite);margin-bottom:1rem;line-height:1.3;">One call. One company. Specialists in garages only.</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.8;">Flooring, storage, insulation, electrical, gym build, sauna — most people end up juggling 5 or 6 different contractors trying to get a garage done. We handle all of it. You make one call, sign one contract, and deal with one company from start to finish. We coordinate every trade so you don't have to.</p>
+      </div>
+
+      <div style="border:1px solid var(--gold-border); padding:2.5rem; background:var(--black-2); position:relative; overflow:hidden;" data-reveal>
+        <div style="font-family:'Playfair Display',serif; font-size:5rem; font-weight:900; color:var(--gold); opacity:0.07; position:absolute; top:-1rem; left:1rem; line-height:1;">03</div>
+        <div style="width:52px;height:52px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.75rem;color:var(--gold);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--offwhite);margin-bottom:1rem;line-height:1.3;">Done on your schedule. Not whenever they get around to it.</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.8;">Because we manage all the scheduling ourselves, we can stack trades smart — often running multiple crews at the same time so your project gets done faster and with way less disruption to your life. You tell us when works, we build a plan around that, and we stick to it.</p>
+      </div>
+
+    </div>
+
+    <div class="promise-box" style="max-width:820px; margin: 0 auto;" data-reveal>
+      <p class="promise-quote">
+        "Your garage is the most underutilized room in your home. We built The Fifth Room to change that — one project at a time, done the right way."
+      </p>
+      <div class="promise-attr">— Quincy Steiner, Owner</div>
+      <div style="margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--gold-border);">
+        <div style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem;">Serving the Wasatch Front</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Davis County</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Weber County</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Salt Lake County</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Utah County</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Kaysville</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Layton</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Ogden</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Bountiful</span>
+          <span style="font-size: 0.8rem; color: var(--offwhite); border: 1px solid var(--gold-border); padding: 0.4rem 0.9rem;">Salt Lake City</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section id="cta" style="padding: 6rem 8vw;">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to build your fifth room?</h2>
+        <p>Free consultation. No pressure. Just honest answers about what your garage can become.</p>
+      </div>
+      <a href="#contact" class="btn-dark">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div data-reveal>
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2 class="section-title">Let's talk<br>about your <em>garage.</em></h2>
+        <div class="gold-rule"></div>
+        <p class="section-body">
+          Every project starts with a free, no-pressure consultation. We'll come out, assess the space, and give you real answers — not a sales pitch.
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.72 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value"><a href="tel:8019284790">(801) 928-4790</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value"><a href="mailto:thefifthroomutah@gmail.com">thefifthroomutah@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-label">Service Area</div>
+              <div class="contact-value">Kaysville, UT &mdash; Davis, Weber, Salt Lake &amp; Utah Counties</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="John" required />
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(801) 555-0000" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="john@email.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Kaysville, Layton, Bountiful..." />
+          </div>
+          <div class="form-field">
+            <label>What are you interested in? <span style="color:var(--gray);font-size:0.7rem;letter-spacing:0.05em;text-transform:none;">(select all that apply)</span></label>
+            <div class="service-checks">
+              <label class="check-item"><input type="checkbox" name="services[]" value="Garage Floor Coating" /><span>Garage Floor Coating</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Custom Storage System" /><span>Custom Storage System</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Garage Organization" /><span>Garage Organization</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Insulation &amp; Drywall" /><span>Insulation &amp; Drywall</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Gym Conversion" /><span>Gym Conversion</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Sauna Buildout" /><span>Sauna Buildout</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Electrical &amp; Lighting" /><span>Electrical &amp; Lighting</span></label>
+              <label class="check-item"><input type="checkbox" name="services[]" value="Not sure yet" /><span>Not sure yet — just exploring</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="message">Tell us about your project</label>
+            <textarea id="message" name="message" placeholder="2-car garage, been using it as storage for years. Looking to get flooring done and maybe some overhead racks..."></textarea>
+          </div>
+          <button type="button" class="form-submit" id="submitBtn" onclick="handleSubmit()">Request Free Consultation</button>
+          <p class="form-note" id="formNote">We'll respond within 24 hours. No spam, no pressure.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-brand">The Fifth Room</div>
+      <div class="footer-tagline" style="margin-top: 0.4rem;">The Room Your Home Was Missing.</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-bottom: 0.75rem;">
+        <a href="#about" style="color:var(--gray); text-decoration:none; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">About</a>
+        <a href="#services" style="color:var(--gray); text-decoration:none; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Services</a>
+        <a href="#process" style="color:var(--gray); text-decoration:none; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Process</a>
+        <a href="#contact" style="color:var(--gray); text-decoration:none; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Contact</a>
+      </div>
+      <div class="footer-copy">Kaysville, Utah</div>
+    </div>
+    <div>
+      <div class="footer-copy" style="text-align:right;">&copy; 2026 The Fifth Room. All rights reserved.</div>
+      <div style="margin-top: 0.4rem; text-align:right;">
+        <a href="tel:8019284790" style="color:var(--gold); text-decoration:none; font-size:0.85rem;">(801) 928-4790</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll behavior
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Reveal on scroll — progressive enhancement only
+    const reveals = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window) {
+      reveals.forEach(el => el.classList.add('will-reveal'));
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.remove('will-reveal');
+              entry.target.classList.add('revealed');
+            }, i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => observer.observe(el));
+      // Fallback: reveal everything after 2s in case observer stalls
+      setTimeout(() => {
+        reveals.forEach(el => {
+          el.classList.remove('will-reveal');
+          el.classList.add('revealed');
+        });
+      }, 2000);
+    }
+
+
+    // Mobile nav
+    let menuOpen = false;
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      const cta = document.querySelector('.nav-cta');
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '64px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(10,10,10,0.98)';
+        links.style.padding = '1.5rem 2rem';
+        links.style.gap = '1.5rem';
+        links.style.borderBottom = '1px solid rgba(201,168,76,0.25)';
+        links.style.zIndex = '99';
+        if (cta) { cta.style.display = 'block'; cta.style.position = 'relative'; cta.style.margin = '0'; }
+      } else {
+        links.style.display = 'none';
+        if (cta) cta.style.display = 'none';
+      }
+    }
+
+    // Form submit via Formspree
+    async function handleSubmit() {
+      const btn = document.getElementById('submitBtn');
+      const note = document.getElementById('formNote');
+      const form = document.getElementById('contactForm');
+
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        if (!field.value.trim()) { field.style.borderColor = '#c0392b'; valid = false; }
+        else field.style.borderColor = '';
+      });
+      if (!valid) return;
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const payload = {};
+      new FormData(form).forEach((v, k) => {
+        if (k === 'services[]') {
+          if (!payload['services']) payload['services'] = [];
+          payload['services'].push(v);
+        } else { payload[k] = v; }
+      });
+      if (payload.services) payload['services'] = payload.services.join(', ');
+
+      try {
+        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          btn.textContent = 'Request Sent!';
+          btn.style.background = '#2a5c2a';
+          btn.style.color = '#a8e6a8';
+          note.textContent = "Thanks! We'll be in touch within 24 hours.";
+          note.style.color = '#a8e6a8';
+        } else { throw new Error(); }
+      } catch (e) {
+        btn.textContent = 'Request Free Consultation';
+        btn.disabled = false;
+        note.textContent = 'Something went wrong. Please call us at (801) 928-4790.';
+        note.style.color = '#e07070';
+      }
+    }
+
+    // Close nav on link click (mobile)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth < 900) {
+          menuOpen = false;
+          const links = document.querySelector('.nav-links');
+          const cta = document.querySelector('.nav-cta');
+          if (links) links.style.display = 'none';
+          if (cta) cta.style.display = 'none';
+        }
+      });
+    });
+
+  </script>
+
+</body>
+</html>
