@@ -1,0 +1,10 @@
+# Add this to your site root (or merge with existing netlify.toml if you have one)
+# Routes /api/* to Netlify serverless functions
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
