@@ -17,8 +17,8 @@
     body{background:#0a0c10;font-family:'DM Sans',sans-serif;overflow-x:hidden}
     #root{min-height:100vh;min-height:100dvh}
   </style>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
@@ -149,15 +149,15 @@ function FloorCV({items,gW,gD,sc,sel,onSel,onDrag,onTap}){
   const selItScr=screenItems.find(i=>i.id===sel);
   const rI=(scIt)=>{const s=scIt.id===sel;const isA=scIt.mt==="area";const sx=scIt._sx,sy=scIt._sy,sw=scIt._sw,sh=scIt._sh;
     return(<div key={scIt.id} onMouseDown={e=>onPD(e,scIt.id)} onTouchStart={e=>{e.stopPropagation();onPD(e,scIt.id);}} onClick={e=>{e.stopPropagation();onSel(scIt.id);}}
-      style={{position:"absolute",left:sx,top:sy,width:Math.max(sw,8),height:Math.max(sh,8),background:isA?scIt.cl+"0d":scIt.cl+"44",border:`${s?2.5:1}px solid ${scIt.cl}${s?"":isA?"44":"88"}`,borderRadius:4,cursor:scIt.locked?"default":"move",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",overflow:"hidden",zIndex:s?20:isA?0:5,touchAction:"none",userSelect:"none",boxShadow:s?`0 0 0 3px ${scIt.cl}44`:"none",opacity:isA?.35:1}}>
+      style={{position:"absolute",left:sx,top:sy,width:Math.max(sw,8),height:Math.max(sh,8),background:isA?scIt.cl+"0d":scIt.cl+"44",border:`${s?2.5:1}px solid ${scIt.cl}${s?"":isA?"44":"88"}`,borderRadius:4,cursor:scIt.locked?"default":"move",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",overflow:"hidden",zIndex:s?20:isA?0:5,touchAction:"none",userSelect:"none",boxShadow:s?`0 0 0 3px ${scIt.cl}44`:"none",opacity:isA?0.35:1}}>
       <div style={{fontSize:Math.max(8,Math.min(18,sh*.3)),lineHeight:1,zIndex:1}}>{scIt.ic}</div>
       {sh>18&&<div style={{fontSize:Math.max(6,Math.min(10,sw/Math.max(scIt.lb.length,1)*1.1)),color:DC.tx,fontWeight:600,textAlign:"center",lineHeight:1.2,zIndex:1,maxWidth:"100%",overflow:"hidden"}}>{scIt.lb}</div>}
       {scIt.locked&&<div style={{position:"absolute",top:1,right:2,fontSize:8}}>{"\uD83D\uDD12"}</div>}
       {scIt.rot&&<div style={{position:"absolute",bottom:1,left:2,fontSize:7,color:DC.pr}}>{"\u21BB"}</div>}
     </div>);};
   return(<div style={{position:"relative",display:"inline-block"}}><div style={{position:"relative",width:pW,height:pH,background:DC.bg,border:`2px solid ${DC.gd}`,userSelect:"none"}}>
-    {Array.from({length:Math.floor(gW)+1},(_,i)=>(<div key={"gx"+i} style={{position:"absolute",top:0,left:i*sc,width:1,height:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:.4,pointerEvents:"none"}}/>))}
-    {Array.from({length:Math.floor(gD)+1},(_,i)=>(<div key={"gy"+i} style={{position:"absolute",left:0,top:i*sc,height:1,width:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:.4,pointerEvents:"none"}}/>))}
+    {Array.from({length:Math.floor(gW)+1},(_,i)=>(<div key={"gx"+i} style={{position:"absolute",top:0,left:i*sc,width:1,height:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:0.4,pointerEvents:"none"}}/>))}
+    {Array.from({length:Math.floor(gD)+1},(_,i)=>(<div key={"gy"+i} style={{position:"absolute",left:0,top:i*sc,height:1,width:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:0.4,pointerEvents:"none"}}/>))}
     <div style={{position:"absolute",top:-16,left:"50%",transform:"translateX(-50%)",fontSize:10,color:DC.gd,fontWeight:700}}>BACK WALL</div>
     <div style={{position:"absolute",bottom:-16,left:"50%",transform:"translateX(-50%)",fontSize:10,color:DC.mt}}>FRONT</div>
     <div style={{position:"absolute",left:-14,top:"50%",transform:"translateY(-50%) rotate(-90deg)",fontSize:9,color:DC.mt}}>LEFT</div>
@@ -191,8 +191,8 @@ function WallCV({items,wW,wH,sc,sel,onSel,onDrag,nm,onTap}){
       {shelfCount>0&&<div style={{position:"absolute",bottom:1,right:3,fontSize:8,color:DC.gd,fontWeight:700,zIndex:2}}>{shelfCount}T</div>}
     </div>);};
   return(<div style={{position:"relative",display:"inline-block"}}><div style={{position:"relative",width:pW,height:pH,background:DC.bg,border:"2px solid #64748b",userSelect:"none"}}>
-    {Array.from({length:Math.floor(wW)+1},(_,i)=>(<div key={"gx"+i} style={{position:"absolute",top:0,left:i*sc,width:1,height:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:.4,pointerEvents:"none"}}/>))}
-    {Array.from({length:Math.floor(wH)+1},(_,i)=>(<div key={"gy"+i} style={{position:"absolute",left:0,top:i*sc,height:1,width:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:.4,pointerEvents:"none"}}/>))}
+    {Array.from({length:Math.floor(wW)+1},(_,i)=>(<div key={"gx"+i} style={{position:"absolute",top:0,left:i*sc,width:1,height:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:0.4,pointerEvents:"none"}}/>))}
+    {Array.from({length:Math.floor(wH)+1},(_,i)=>(<div key={"gy"+i} style={{position:"absolute",left:0,top:i*sc,height:1,width:"100%",background:i%5===0?"#2e3a52":DC.bd,opacity:i%5===0?1:0.4,pointerEvents:"none"}}/>))}
     {Array.from({length:Math.floor(wH/2)+1},(_,i)=>(<div key={"lh"+i} style={{position:"absolute",right:4,top:(wH-i*2)*sc-10,fontSize:9,color:DC.mt+"66",pointerEvents:"none"}}>{i*2}'</div>))}
     <div style={{position:"absolute",bottom:0,left:0,right:0,height:3,background:"#64748b",pointerEvents:"none"}}/>
     <div style={{position:"absolute",top:4,left:6,fontSize:10,color:"#64748b",fontWeight:600,pointerEvents:"none"}}>CEILING {_fmt(wH)}</div>
@@ -395,7 +395,7 @@ function AIPanel({gW,gD,gH,items,onApplyAI,showToast}){
   return(<div style={{padding:14,display:"flex",flexDirection:"column",gap:10}}>
     <div style={{display:"flex",gap:6,alignItems:"center",paddingBottom:10,borderBottom:`1px solid ${DC.bd}`}}><span style={{fontSize:18}}>{"\u2728"}</span><div><div style={{color:DC.gd,fontWeight:700,fontSize:13}}>AI Design Assistant</div><div style={{color:DC.mt,fontSize:10}}>Describe your dream garage</div></div></div>
     <textarea style={{..._iS({fontSize:12,minHeight:80,resize:"vertical",lineHeight:1.5}),fontFamily:"DM Sans,sans-serif"}} placeholder="Example: Home gym with squat rack, mirrors on back wall, slatwall on left, LED lighting, space for one car." value={prompt} onChange={e=>setPrompt(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&!e.shiftKey&&!loading){e.preventDefault();generateDesign();}}}/>
-    <button onClick={generateDesign} disabled={loading||!prompt.trim()} style={{..._bS(loading?DC.cd:DC.gd,loading?DC.mt:"#0a0c10"),width:"100%",fontSize:13,padding:"10px 16px",opacity:loading||!prompt.trim()?.6:1}}>{loading?"\u23F3 Designing...":"\u2728 Generate Design"}</button>
+    <button onClick={generateDesign} disabled={loading||!prompt.trim()} style={{..._bS(loading?DC.cd:DC.gd,loading?DC.mt:"#0a0c10"),width:"100%",fontSize:13,padding:"10px 16px",opacity:loading||!prompt.trim()?0.6:1}}>{loading?"\u23F3 Designing...":"\u2728 Generate Design"}</button>
     {error&&<div style={{background:DC.rd+"18",border:`1px solid ${DC.rd}44`,borderRadius:8,padding:"8px 12px",color:DC.rd,fontSize:11}}>{error}</div>}
     {preview&&<div style={{background:DC.cd,border:`1px solid ${DC.gd}44`,borderRadius:8,padding:12}}>
       <div style={{color:DC.gd,fontWeight:700,fontSize:12,marginBottom:6}}>{"\u2705"} Design Ready</div>
@@ -415,15 +415,15 @@ function AIPanel({gW,gD,gH,items,onApplyAI,showToast}){
 /* ── Multi-view Export ──────────────────────────────────────────────────── */
 function renderFloorSVG(items,gW,gD,sc){
   const fW=gW*sc,fH=gD*sc;let svg='<svg width="'+fW+'" height="'+fH+'" xmlns="http://www.w3.org/2000/svg"><rect width="'+fW+'" height="'+fH+'" fill="#0a0c10" stroke="#C9A84C" stroke-width="2"/>';
-  for(let i=0;i<=gW;i++)svg+='<line x1="'+(i*sc)+'" y1="0" x2="'+(i*sc)+'" y2="'+fH+'" stroke="#1e2535" stroke-width="'+(i%5===0?.8:.3)+'"/>';
-  for(let i=0;i<=gD;i++)svg+='<line x1="0" y1="'+(i*sc)+'" x2="'+fW+'" y2="'+(i*sc)+'" stroke="#1e2535" stroke-width="'+(i%5===0?.8:.3)+'"/>';
+  for(let i=0;i<=gW;i++)svg+='<line x1="'+(i*sc)+'" y1="0" x2="'+(i*sc)+'" y2="'+fH+'" stroke="#1e2535" stroke-width="'+(i%5===0?0.8:0.3)+'"/>';
+  for(let i=0;i<=gD;i++)svg+='<line x1="0" y1="'+(i*sc)+'" x2="'+fW+'" y2="'+(i*sc)+'" stroke="#1e2535" stroke-width="'+(i%5===0?0.8:0.3)+'"/>';
   items.forEach(it=>{const x=it.x*sc,y=it.y*sc,w=it.w*sc,h=it.d*sc,isA=it.mt==="area";svg+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+it.cl+(isA?"11":"44")+'" stroke="'+it.cl+(isA?"44":"")+'" stroke-width="1" rx="3"/>';svg+='<text x="'+(x+w/2)+'" y="'+(y+h/2+4)+'" text-anchor="middle" fill="'+(isA?it.cl+"88":"#dce6f0")+'" font-size="9" font-weight="600" font-family="sans-serif">'+it.ic+" "+it.lb+"</text>";});
   svg+="</svg>";return svg;
 }
 function renderWallSVG(wallItems,wW,wH,sc,wallName){
   const fW=wW*sc,fH=wH*sc;let svg='<svg width="'+fW+'" height="'+fH+'" xmlns="http://www.w3.org/2000/svg"><rect width="'+fW+'" height="'+fH+'" fill="#0a0c10" stroke="#64748b" stroke-width="2"/>';
-  for(let i=0;i<=wW;i++)svg+='<line x1="'+(i*sc)+'" y1="0" x2="'+(i*sc)+'" y2="'+fH+'" stroke="#1e2535" stroke-width="'+(i%5===0?.8:.3)+'"/>';
-  for(let i=0;i<=wH;i++)svg+='<line x1="0" y1="'+(i*sc)+'" x2="'+fW+'" y2="'+(i*sc)+'" stroke="#1e2535" stroke-width="'+(i%5===0?.8:.3)+'"/>';
+  for(let i=0;i<=wW;i++)svg+='<line x1="'+(i*sc)+'" y1="0" x2="'+(i*sc)+'" y2="'+fH+'" stroke="#1e2535" stroke-width="'+(i%5===0?0.8:0.3)+'"/>';
+  for(let i=0;i<=wH;i++)svg+='<line x1="0" y1="'+(i*sc)+'" x2="'+fW+'" y2="'+(i*sc)+'" stroke="#1e2535" stroke-width="'+(i%5===0?0.8:0.3)+'"/>';
   svg+='<rect x="0" y="'+(fH-3)+'" width="'+fW+'" height="3" fill="#64748b"/>';
   svg+='<text x="8" y="16" fill="#64748b" font-size="10" font-weight="600" font-family="sans-serif">CEILING '+_fmt(wH)+"</text>";
   svg+='<text x="'+(fW-8)+'" y="16" text-anchor="end" fill="#C9A84C" font-size="11" font-weight="700" font-family="sans-serif">'+wallName+"</text>";
@@ -709,7 +709,13 @@ function App(){
 }
 
     // ── Mount ──
-    const root = ReactDOM.createRoot(document.getElementById('root'));
+    try {
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(React.createElement(App));
+    } catch(err) {
+      document.getElementById("root").innerHTML = "<div style=\"color:#ef4444;padding:40px;font-family:monospace;\"><h2>Error loading designer</h2><pre>" + err.message + "\n" + err.stack + "</pre></div>";
+      console.error("Designer load error:", err);
+    }
     root.render(React.createElement(App));
   </script>
 </body>
